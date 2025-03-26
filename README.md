@@ -51,9 +51,9 @@ ACCESS_KEY=your_market_stack_api_key
 # Choose either Azure OpenAI or OpenAI configuration
 # Option 1: Azure OpenAI Configuration
 AZURE_OPENAI_ENDPOINT=your_azure_openai_endpoint
-AZURE_DEPLOYMENT_NAME=your_deployment_name
+AZURE_DEPLOYMENT_NAME=your_deployment_name e.g. gpt4-o
 AZURE_API_KEY=your_azure_api_key
-AZURE_API_VERSION=2024-02-15-preview
+AZURE_API_VERSION= your_Azure_OpenAI_Version  e.g. 2024-02-15-preview
 
 # Option 2: OpenAI Configuration (Alternative)
 OPENAI_API_KEY=your_openai_api_key
@@ -118,30 +118,28 @@ brew install ngrok
 
 # Or download from https://ngrok.com/download
 ```
-
-2. Start your agent:
-```bash
-npm run dev
-```
-
-3. In a new terminal, start ngrok:
+2. In a new terminal, start ngrok:
 ```bash
 ngrok http --url=https://abc123.ngrok-free.app 7378
 ```
 
-4. `https://abc123.ngrok-free.app` is your ngrok endpoint URL
-
-## Production Deployment
-
-1. Build the project:
+3. `https://abc123.ngrok-free.app` is your ngrok endpoint URL
+   
+4. Build your agent code:
 ```bash
 npm run build
 ```
 
-2. Start the dev server with hot-reload:
+5. Start the dev server with hot-reload:
 ```bash
 npm run dev
 ```
+
+For basics please refer to the Agent Docs at 
+https://docs.openserv.ai/getting-started/agent-starter
+
+For how to run your agent on OpenServ platform please refer to this YouTube video
+https://www.youtube.com/live/e8MeWDspwL4?si=K6xz0k1YyGpkpPZQ
 
 
 ## API Integration Details
