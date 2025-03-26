@@ -17,7 +17,7 @@ A powerful AI agent built with the [OpenServ SDK](https://github.com/openserv-la
 - An OpenServ account (create one at [platform.openserv.ai](https://platform.openserv.ai))
 - Market Stack API key (for stock data)
 - Either Azure OpenAI API credentials or OpenAI API key (for AI insights)
-- (Optional) ngrok for local development
+- ngrok for tunneling between your local agent code and openserv agent platform
 
 ## Getting Started
 
