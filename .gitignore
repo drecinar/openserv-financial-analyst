@@ -132,3 +132,7 @@ dist
 .DS_Store
 package-lock.json
 .env
+/src/*.js
+
+
+

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
+import {config} from 'dotenv'
 
 // Load environment variables from .env file
-dotenv.config();
+config();
 
 const BASE_URL = process.env.BASE_URL;
 const ACCESS_KEY = process.env.ACCESS_KEY;
@@ -23,7 +23,10 @@ function createFinancialPromptFromData(entries: any[]): string {
       })
       .join('\n');
   
-    return `Analyze the following stock performance data for financial decision-making. Based on the trend, volume, and price actions, should the investor consider a "buy", "sell", or "neutral" position? Provide a short justification. Only respond with the JSON format without any additional text\n\n${summary}`;
+    return `Analyze the following stock performance data for financial decision-making. 
+    Based on the trend, volume, and price actions, should the investor consider a "buy", 
+    "sell", or "neutral" position? Provide a short justification. Only respond with the JSON 
+    format without any additional text\n\n${summary}`;
   }
   
 

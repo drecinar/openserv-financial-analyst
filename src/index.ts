@@ -1,17 +1,17 @@
 import { Agent } from '@openserv-labs/sdk'
 import { z } from 'zod'
-import dotenv from 'dotenv';
+import {config } from 'dotenv'
 import { getHistoricalValuesByName, analyzeTrend, generateInsightWithOpenAI } from './financialAPI'
 
 // Load environment variables from .env file
-dotenv.config();
+config();
 
 const apiKey = process.env.OPENSERV_API_KEY;
 
 // Initialize the agent
 const agent = new Agent({
   systemPrompt: `You are a financial assistant. You provide financial advice and analysis to users. 
-  You can greet users by name, bid farewell, and analyze financial data for a given company within a date range. 
+  You analyze financial data for a given company within a date range. 
   You can help users by:
   - Analyzing financial data for a given company within a date range
   - Providing insights and trends based on financial data
@@ -20,26 +20,6 @@ const agent = new Agent({
 })
 
 agent.addCapabilities([
-  {
-    name: 'greet',
-    description: 'Greet a user by name',
-    schema: z.object({
-      name: z.string().describe('The name of the user to greet')
-    }),
-    async run({ args }) {
-      return `Hello, ${args.name}!`
-    }
-  },
-  {
-    name: 'farewell',
-    description: 'Say goodbye to a user',
-    schema: z.object({
-      name: z.string().describe('The name of the user to bid farewell')
-    }),
-    async run({ args }) {
-      return `Goodbye, ${args.name}!`
-    }
-  },
 {
   name: 'analyzeFinancialData',
   description: 'Analyze financial data for a given company within a date range',
