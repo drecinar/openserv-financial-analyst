@@ -126,10 +126,10 @@ npm run dev
 
 3. In a new terminal, start ngrok:
 ```bash
-ngrok http 7378
+ngrok http --url=https://abc123.ngrok-free.app 7378
 ```
 
-4. Copy the ngrok URL (e.g., `https://abc123.ngrok-free.app`) and use it as your agent endpoint in the OpenServ platform.
+4. `https://abc123.ngrok-free.app` is your ngrok endpoint URL
 
 ## Production Deployment
 
