@@ -241,7 +241,7 @@ const fromDate = process.argv[3];    // Example: '2025-03-18'
 const toDate = process.argv[4];      // Example: '2025-03-19'
 
 if (!companyName || !fromDate || !toDate) {
-    console.error('Usage: ts-node script.ts "Company Name" YYYY-MM-DD YYYY-MM-DD');
+    console.error('Usage: ts-node financialAPI.ts "Company Name" YYYY-MM-DD YYYY-MM-DD');
     process.exit(1);
 }
 
@@ -261,4 +261,4 @@ try {
 }
 }
 
-// main();
+//main();
