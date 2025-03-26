@@ -1,12 +1,15 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
 
-const BASE_URL = 'https://api.marketstack.com/v2';
-const ACCESS_KEY = '936da5287754c7ecf94037faa41b9f03';
+// Load environment variables from .env file
+dotenv.config();
 
-const AZURE_OPENAI_ENDPOINT = 'https://openserv-trials.openai.azure.com/'; // e.g., https://your-resource-name.openai.azure.com/
-const AZURE_DEPLOYMENT_NAME = 'gpt-4o'; // e.g., gpt-35-turbo
-const AZURE_API_KEY = '2uDTnMRk4VgHOFy3DOcaaZNBO1mmL7M93DQ9sHkTdXYDjcluiEDPJQQJ99BCACHrzpqXJ3w3AAABACOG4Brg';
-const AZURE_API_VERSION = '2024-02-15-preview';
+const BASE_URL = process.env.BASE_URL;
+const ACCESS_KEY = process.env.ACCESS_KEY;
+const AZURE_OPENAI_ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT;
+const AZURE_DEPLOYMENT_NAME =process.env.AZURE_DEPLOYMENT_NAME; // e.g., gpt-40
+const AZURE_API_KEY = process.env.AZURE_API_KEY; 
+const AZURE_API_VERSION = process.env.AZURE_API_VERSION;
 
 
 function createFinancialPromptFromData(entries: any[]): string {
